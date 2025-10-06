@@ -1,6 +1,8 @@
 import { getPokemonBySlug } from "@/app/actions/getPokemonBySlug";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
-import PokemonClient from "./views/pokemonClient";
+import ResponsiveLayoutContainer from "@/app/components/layout/responsive-layout-container";
+import PokemonMobileView from "./views/pokemonMobileView";
+import PokemonDesktopView from "./views/pokemonDesktopView";
 
 export default async function PokemonPage({
   params,
@@ -15,5 +17,14 @@ export default async function PokemonPage({
   });
   const dehydratedState = dehydrate(queryClient);
 
-  return <PokemonClient slug={slug} dehydratedState={dehydratedState} />;
+  return (
+    <ResponsiveLayoutContainer
+      mobileView={
+        <PokemonMobileView slug={slug} dehydratedState={dehydratedState} />
+      }
+      desktopView={
+        <PokemonDesktopView slug={slug} dehydratedState={dehydratedState} />
+      }
+    />
+  );
 }

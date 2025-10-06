@@ -2,6 +2,7 @@ import { Pokemon } from "@/app/types/pokemon";
 import { css } from "@/styled-system/css";
 import Link from "next/link";
 import { Text } from "pokeapi-ui";
+import PokemonCard from "../card/pokemonCard";
 
 interface Props {
   pokemons: Pokemon[];
@@ -9,8 +10,18 @@ interface Props {
 
 export default function PokemonList({ pokemons }: Readonly<Props>) {
   return (
-    <div>
-      <Text as="h1">Pokemon List</Text>
+    <div className={css({ py: "4" })}>
+      <Text
+        as="h1"
+        className={css({
+          fontSize: "2xl",
+          color: "orange.500",
+          textAlign: "center",
+          fontWeight: "extrabold",
+        })}
+      >
+        World of Pokémon
+      </Text>
       <div className={css({ textAlign: "center", mt: "8" })}>
         {/*<h2 className={css({fontSize: '2xl'})}>Pokemon List</h2>*/}
         <ul
@@ -23,21 +34,7 @@ export default function PokemonList({ pokemons }: Readonly<Props>) {
           })}
         >
           {pokemons.map((pokemon) => (
-            <Link key={pokemon.id} href={`/pokemon/${pokemon.name}/`}>
-              <li
-                className={css({
-                  borderWidth: "1px",
-                  borderRadius: "md",
-                  p: 4,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                })}
-              >
-                <img src={pokemon.url} alt={pokemon.name} />
-                <span>{pokemon.name}</span>
-              </li>
-            </Link>
+            <PokemonCard key={pokemon.id} pokemon={pokemon} />
           ))}
         </ul>
       </div>

@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "pokeapi-ui/dist/pokeapi-ui.css";
 import QueryProvider from "./providers/QueryProvider";
+import Header from "./components/header/header";
+import { css } from "@/styled-system/css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <Header />
+          <main
+            className={css({
+              pt: 16,
+            })}
+          >
+            {children}
+          </main>
+        </QueryProvider>
       </body>
     </html>
   );

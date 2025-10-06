@@ -3,7 +3,6 @@
 import { getPokemonBySlug } from "@/app/actions/getPokemonBySlug";
 import { useQuery } from "@tanstack/react-query";
 import PokemonInformation from "./pokemonInformation";
-import Table from "@/app/components/table/table";
 
 export default function PokemonContent({ slug }: { slug: string }) {
   const {

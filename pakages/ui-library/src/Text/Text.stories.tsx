@@ -15,8 +15,9 @@ const meta: Meta<typeof Text> = {
       options: ["sm", "md", "lg", "xl"],
     },
     color: {
-      control: { type: "radio" },
-      options: ["neutral", "primary", "secondary"],
+      control: { type: "text" },
+      description:
+        "Puedes usar tokens del tema o cualquier color CSS válido (hex, rgb, etc.)",
     },
     weight: {
       control: { type: "radio" },
@@ -34,13 +35,12 @@ export default meta;
 
 type Story = StoryObj<typeof Text>;
 
-// Default story
 export const Default: Story = {
   args: {
     children: "Hello, I am default text",
     as: "p",
-    size: "md",
-    color: "primary",
+    size: "xl",
+    color: "red",
     weight: "bold",
     truncate: false,
     uppercase: false,
@@ -49,7 +49,6 @@ export const Default: Story = {
   },
 };
 
-// Variants
 export const Heading: Story = {
   args: {
     children: "I am an h1",
@@ -58,8 +57,7 @@ export const Heading: Story = {
     weight: "bold",
     uppercase: true,
     underline: true,
-    color: "neutral",
-    className: 'color: "#ff0000"',
+    color: "red",
   },
 };
 
@@ -69,15 +67,15 @@ export const Truncated: Story = {
       "This text is very long and will be truncated with ellipsis at the end",
     truncate: true,
     size: "md",
-    color: "neutral",
+    color: "neutral.600",
   },
 };
 
 export const StyledText: Story = {
   args: {
     children: "Text with combined styles",
-    size: "xl",
-    color: "secondary",
+    size: "sm",
+    color: "orange.500",
     weight: "light",
     uppercase: true,
     italic: true,
@@ -90,6 +88,6 @@ export const AsDiv: Story = {
     children: "I am a div using the 'as' prop",
     as: "div",
     size: "md",
-    color: "primary",
+    color: "sky.600",
   },
 };

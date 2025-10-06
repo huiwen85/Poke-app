@@ -1,7 +1,7 @@
 import ResponsiveLayoutContainer from "./components/layout/responsive-layout-container";
 import { Pokemon } from "./types/pokemon";
-import HomeDesktopView from "./views/home-desktop-view";
-import HomeMobileView from "./views/home-mobile-view";
+import HomeDesktopView from "./views/homeDesktopView";
+import HomeMobileView from "./views/homeMobileView";
 
 async function getPokemons(): Promise<Pokemon[]> {
   const response = await fetch("https://pokeapi.co/api/v2/pokemon/", {});

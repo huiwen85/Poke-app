@@ -4,7 +4,7 @@ import { forwardRef, type ElementType } from "react";
 interface TextProps {
   as?: ElementType;
   size?: "sm" | "md" | "lg" | "xl";
-  color?: "neutral" | "primary" | "secondary";
+  color?: string;
   weight?: "light" | "normal" | "bold";
   truncate?: boolean;
   uppercase?: boolean;
@@ -19,7 +19,7 @@ export const Text = forwardRef<HTMLElement, TextProps>(
     {
       as = "p",
       size = "md",
-      color = "primary",
+      color = "neutral.950",
       weight = "bold",
       truncate = false,
       uppercase = false,
@@ -53,5 +53,3 @@ export const Text = forwardRef<HTMLElement, TextProps>(
     );
   },
 );
-
-Text.displayName = "Text";

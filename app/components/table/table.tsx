@@ -37,10 +37,8 @@ const tableWrapper = css({
 });
 
 const tableStyle = css({
-  minW: "full",
+  minWidth: "100%",
   borderCollapse: "collapse",
-  borderSpacing: 0,
-  divideY: "gray.300",
 });
 
 const thStyle = css({
@@ -59,6 +57,8 @@ const tdStyle = css({
   fontSize: "sm",
   whiteSpace: "nowrap",
   color: "gray.500",
+  borderTop: "1px solid #D1D5DB",
+  padding: "0.5rem 1rem",
 });
 
 const editLink = css({
@@ -124,10 +124,9 @@ export default function Table({ pokemon }: Readonly<{ pokemon: PokemonInfo }>) {
     <div className={container}>
       <div className={headerStyle}>
         <div>
-          <h1 className={title}>{}</h1>
+          <h1 className={title}>Details for {pokemon.name}</h1>
           <p className={descriptionStyle}>
-            A list of all the users in your account including their name, title,
-            email and role.
+            Below are the statistics and abilities of {pokemon.name}.
           </p>
         </div>
       </div>

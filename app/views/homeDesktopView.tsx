@@ -1,3 +1,4 @@
+import { NarrowConstrainedWrapper } from "../components/layout/narrow-constraint-wrapper";
 import PokemonList from "../components/pokemon-list/pokemonList";
 import { Pokemon } from "../types/pokemon";
 
@@ -6,7 +7,9 @@ export default function HomeDesktopView({
 }: Readonly<{ pokemons: Pokemon[] }>) {
   return (
     <div>
-      <PokemonList pokemons={pokemons} />
+      <NarrowConstrainedWrapper>
+        <PokemonList pokemons={pokemons} />
+      </NarrowConstrainedWrapper>
     </div>
   );
 }
