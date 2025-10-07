@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Poke-app
+
+Este proyecto usa Storybook para documentar los componentes UI.
+
+🌐 **Documentación de componentes (Storybook):** [Ver Storybook](https://huiwen85.github.io/Poke-app/)
 
 ## Getting Started
 
