@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "pokeapi-ui/dist/pokeapi-ui.css";
-import QueryProvider from "./providers/QueryProvider";
-import Header from "./components/header/header";
 import { css } from "@/styled-system/css";
+import HeaderContainer from "./components/header/headerContainer";
+import QueryProvider from "./providers/queryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <QueryProvider>
-          <Header />
+          {/* <Header /> */}
+          <HeaderContainer />
           <main
             className={css({
               pt: 16,

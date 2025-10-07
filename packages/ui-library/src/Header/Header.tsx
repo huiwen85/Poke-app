@@ -1,21 +1,39 @@
 import { Disclosure } from "@headlessui/react";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { css } from "@/styled-system/css";
 import { Text } from "pokeapi-ui";
-import Link from "next/link";
-import SearchBar from "../search-bar/searchBar";
+import { css } from "../../styled-system/css";
 
-export default function Header() {
+export interface NavLink {
+  label: string;
+  href: string;
+  isActive?: boolean;
+}
+interface HeaderProps {
+  title?: string;
+  navLinks?: NavLink[];
+  children?: React.ReactNode;
+  LinkComponent?: React.ComponentType<{
+    className: string;
+    href: string;
+    children: React.ReactNode;
+  }>;
+}
+
+export function Header({
+  title = "PokeMonsters",
+  navLinks = [{ label: "Explore", href: "/", isActive: true }],
+  children,
+  LinkComponent = ({ href, children, className, ...props }) => (
+    <a href={href} className={className} {...props}>
+      {children}
+    </a>
+  ),
+}: HeaderProps) {
   const navContainerStyle = css({
     display: "none",
     ml: "6",
     flexDirection: "row",
     gap: "8",
-    lg: {
-      display: "flex",
-      ml: "6",
-      gap: "8",
-    },
+    lg: { display: "flex", ml: "6", gap: "8" },
   });
 
   const navLink = css({
@@ -28,26 +46,19 @@ export default function Header() {
     fontWeight: "medium",
     color: "gray.500",
     borderColor: "transparent",
-    _hover: {
-      borderColor: "gray.300",
-      color: "gray.700",
-    },
+    _hover: { borderColor: "gray.300", color: "gray.700" },
     _dark: {
       color: "gray.400",
-      _hover: {
-        borderColor: "whiteAlpha.20",
-        color: "white",
-      },
+      _hover: { borderColor: "whiteAlpha.20", color: "white" },
     },
+    outline: "none",
+    _focus: { boxShadow: "0 0 0 3px orange.300" },
   });
 
   const navLinkActive = css({
     borderColor: "orange.500",
     color: "gray.900",
-    _dark: {
-      borderColor: "indigo.500",
-      color: "white",
-    },
+    _dark: { borderColor: "indigo.500", color: "white" },
   });
 
   return (
@@ -98,17 +109,24 @@ export default function Header() {
                 flexShrink: 0,
               })}
             >
-              <Text as={"p"} weight="bold">
-                PokeMonsters
+              <Text as="p" weight="bold">
+                {title}
               </Text>
             </div>
             <div className={navContainerStyle}>
-              <Link href="/" className={`${navLink} ${navLinkActive}`}>
-                Explore
-              </Link>
+              {navLinks.map((link) => (
+                <LinkComponent
+                  key={link.href}
+                  href={link.href}
+                  className={`${navLink} ${link.isActive ? navLinkActive : ""}`} // <-- clase aquí
+                  aria-current={link.isActive ? "page" : undefined} // <-- opcional si tu LinkComponent acepta props de a11y
+                >
+                  {link.label} {/* ya no necesitas el span */}
+                </LinkComponent>
+              ))}
             </div>
           </div>
-          <SearchBar />
+          {children}
         </div>
       </div>
     </Disclosure>

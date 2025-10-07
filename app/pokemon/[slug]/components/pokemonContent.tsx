@@ -2,7 +2,8 @@
 
 import { getPokemonBySlug } from "@/app/actions/getPokemonBySlug";
 import { useQuery } from "@tanstack/react-query";
-import PokemonInformation from "./pokemonInformation";
+import PokemonInformation from "../fragments/pokemonInformation";
+import LoadingSpinner from "@/app/components/loading/loadingSpinner";
 
 export default function PokemonContent({ slug }: { slug: string }) {
   const {
@@ -18,5 +19,10 @@ export default function PokemonContent({ slug }: { slug: string }) {
   if (isLoading) return <p>Cargando...</p>;
   if (error) return <p>Error al cargar Pokémon</p>;
 
-  return <div>{pokemon && <PokemonInformation pokemon={pokemon} />}</div>;
+  return (
+    <div>
+      {isLoading && <LoadingSpinner />}
+      {pokemon && <PokemonInformation pokemon={pokemon} />}
+    </div>
+  );
 }

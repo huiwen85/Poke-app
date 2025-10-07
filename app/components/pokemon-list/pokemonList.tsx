@@ -1,7 +1,5 @@
 import { Pokemon } from "@/app/types/pokemon";
 import { css } from "@/styled-system/css";
-import Link from "next/link";
-import { Text } from "pokeapi-ui";
 import PokemonCard from "../card/pokemonCard";
 
 interface Props {
@@ -11,8 +9,7 @@ interface Props {
 export default function PokemonList({ pokemons }: Readonly<Props>) {
   return (
     <div className={css({ py: "4" })}>
-      <Text
-        as="h1"
+      <h1
         className={css({
           fontSize: "2xl",
           color: "orange.500",
@@ -21,9 +18,8 @@ export default function PokemonList({ pokemons }: Readonly<Props>) {
         })}
       >
         World of Pokémon
-      </Text>
+      </h1>
       <div className={css({ textAlign: "center", mt: "8" })}>
-        {/*<h2 className={css({fontSize: '2xl'})}>Pokemon List</h2>*/}
         <ul
           className={css({
             display: "grid",

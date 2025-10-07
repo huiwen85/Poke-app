@@ -1,32 +1,34 @@
-"use client";
-
 import { css } from "@/styled-system/css";
 
-export const LoadingSpinner = () => (
-  <div
-    className={css({
-      position: "fixed",
-      inset: 0,
-      zIndex: 1,
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      w: "full",
-      h: "full",
-      overflowX: "hidden",
-      bg: { base: "blackAlpha.100", _dark: "blackAlpha.300" },
-    })}
-  >
+export default function LoadingSpinner() {
+  return (
     <div
       className={css({
-        w: "12",
-        h: "12",
-        border: "4px solid",
-        borderColor: "blue.500",
-        borderTopColor: "transparent",
-        borderRadius: "full",
-        animation: "spin 0.8s linear infinite",
+        position: "fixed",
+        zIndex: 10,
+        top: 0,
+        left: 0,
+        bg: "black",
+        w: "100vw",
+        h: "100vh",
+        opacity: 0.5,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       })}
-    />
-  </div>
-);
+    >
+      <div
+        className={css({
+          animation: "spin 1s linear infinite",
+          borderRadius: "full",
+          h: "3rem",
+          w: "3rem",
+          borderBottomWidth: "2px",
+          borderRightWidth: "2px",
+          borderColor: "white",
+          borderStyle: "solid",
+        })}
+      ></div>
+    </div>
+  );
+}
