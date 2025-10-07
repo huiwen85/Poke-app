@@ -31,9 +31,9 @@ jobs:
       - name: Build Storybook
         run: |
           if [ -f packages/ui-library/package.json ]; then
-            npm run --prefix packages/ui build-storybook
+            npm run --prefix packages/ui-library build-storybook
           else
-            echo "No package.json found in packages/ui"
+            echo "No package.json found in packages/ui-library"
             exit 1
           fi
 
