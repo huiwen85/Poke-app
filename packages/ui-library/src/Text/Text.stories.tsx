@@ -37,7 +37,7 @@ type Story = StoryObj<typeof Text>;
 
 export const Default: Story = {
   args: {
-    children: "Hello, I am default text",
+    children: "Hello, I am default text!",
     as: "p",
     size: "xl",
     color: "red",
