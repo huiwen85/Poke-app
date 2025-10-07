@@ -1,5 +1,4 @@
 import { Disclosure } from "@headlessui/react";
-import { Text } from "pokeapi-ui";
 import { css } from "../../styled-system/css";
 
 export interface NavLink {
@@ -109,9 +108,9 @@ export function Header({
                 flexShrink: 0,
               })}
             >
-              <Text as="p" weight="bold">
+              <p className={css({fontWeight: 'bold'})}>
                 {title}
-              </Text>
+              </p>
             </div>
             <div className={navContainerStyle}>
               {navLinks.map((link) => (
