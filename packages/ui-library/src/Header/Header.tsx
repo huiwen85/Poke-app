@@ -108,9 +108,7 @@ export function Header({
                 flexShrink: 0,
               })}
             >
-              <p className={css({fontWeight: 'bold'})}>
-                {title}
-              </p>
+              <p className={css({ fontWeight: "bold" })}>{title}</p>
             </div>
             <div className={navContainerStyle}>
               {navLinks.map((link) => (
