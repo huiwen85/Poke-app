@@ -30,12 +30,9 @@ jobs:
 
       - name: Build Storybook
         run: |
-          if [ -f packages/ui-library/package.json ]; then
-            npm run --prefix packages/ui-library build-storybook
-          else
-            echo "No package.json found in packages/ui-library"
-            exit 1
-          fi
+          cd packages/ui-library
+          npm install
+          npm run build-storybook
 
       - name: Deploy Storybook
         uses: JamesIves/github-pages-deploy-action@v4
