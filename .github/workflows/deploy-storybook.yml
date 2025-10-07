@@ -40,3 +40,4 @@ jobs:
           branch: gh-pages
           folder: packages/ui-library/storybook-static
           clean: true
+          github_token: ${{ secrets.GH_PAT }}
