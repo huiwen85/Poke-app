@@ -3,11 +3,12 @@ name: Deploy Storybook
 on:
   push:
     branches:
-      - main # o tu rama principal
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
@@ -17,13 +18,28 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          if [ -f package-lock.json ]; then
+            npm install
+          elif [ -f yarn.lock ]; then
+            yarn install
+          elif [ -f pnpm-lock.yaml ]; then
+            npm install -g pnpm
+            pnpm install
+          fi
 
       - name: Build Storybook
-        run: npm run build-storybook
+        run: |
+          if [ -f packages/ui-library/package.json ]; then
+            npm run --prefix packages/ui build-storybook
+          else
+            echo "No package.json found in packages/ui"
+            exit 1
+          fi
 
       - name: Deploy Storybook
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: storybook-static
+          folder: packages/ui-library/storybook-static
+          clean: true
