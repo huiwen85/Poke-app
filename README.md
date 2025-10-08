@@ -4,6 +4,8 @@ Este proyecto usa Storybook para documentar los componentes UI.
 
 🌐 **Documentación de componentes (Storybook):** [Ver Storybook](https://huiwen85.github.io/Poke-app/)
 
+Mi aplicación de Pokémon está desplegada en Vercel: [pokeapp-henna](https://pokeapp-henna.vercel.app)
+
 # Quickstart
 
 npm install

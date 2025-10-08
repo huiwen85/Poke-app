@@ -115,10 +115,10 @@ export function Header({
                 <LinkComponent
                   key={link.href}
                   href={link.href}
-                  className={`${navLink} ${link.isActive ? navLinkActive : ""}`} // <-- clase aquí
-                  aria-current={link.isActive ? "page" : undefined} // <-- opcional si tu LinkComponent acepta props de a11y
+                  className={`${navLink} ${link.isActive ? navLinkActive : ""}`}
+                  aria-current={link.isActive ? "page" : undefined}
                 >
-                  {link.label} {/* ya no necesitas el span */}
+                  {link.label}
                 </LinkComponent>
               ))}
             </div>
