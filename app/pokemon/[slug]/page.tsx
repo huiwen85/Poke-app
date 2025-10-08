@@ -7,7 +7,7 @@ import PokemonDesktopView from "./views/pokemonDesktopView";
 export default async function PokemonPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const queryClient = new QueryClient();
   const { slug } = await params;

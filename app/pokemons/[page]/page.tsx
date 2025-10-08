@@ -5,7 +5,7 @@ import PokemonsDesktopView from "./views/pokemonsDesktopView";
 export default async function PokemonsPage({
   params,
 }: {
-  params: { page: string };
+  params: Promise<{ page: string }>;
 }) {
   const { page } = await params;
 
