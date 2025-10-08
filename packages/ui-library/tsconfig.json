@@ -24,5 +24,10 @@
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"],
-  "exclude": ["**/*.stories.tsx", "node_modules", "dist", ".storybook"]
+  "exclude": [
+    "**/*.stories.tsx",
+    "node_modules",
+    "dist",
+    ".storybook"
+  ]
 }
