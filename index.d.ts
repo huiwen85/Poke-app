@@ -1,6 +1,8 @@
 import { ElementType } from '../../node_modules/react';
 import { ForwardRefExoticComponent } from '../../node_modules/react';
 import { JSX } from 'react/jsx-runtime';
+import { JSX as JSX_2 } from '../../node_modules/react';
+import { ReactNode } from '../../node_modules/react';
 import { RefAttributes } from '../../node_modules/react';
 
 export declare function Header({ title, navLinks, children, LinkComponent, }: HeaderProps): JSX.Element;
@@ -20,6 +22,24 @@ declare interface NavLink {
     label: string;
     href: string;
     isActive?: boolean;
+}
+
+declare interface Pokemon {
+    id: number;
+    name: string;
+    url: string;
+}
+
+export declare function PokemonCard({ pokemon, href, className, LinkComponent, }: PokemonCardProps): JSX.Element;
+
+declare interface PokemonCardProps {
+    pokemon: Pokemon;
+    href?: string;
+    className?: string;
+    LinkComponent?: (props: {
+        href: string;
+        children: ReactNode;
+    }) => JSX_2.Element;
 }
 
 export declare const SearchBar: ({ placeholder, onSearch, className, }: SearchBarProps) => JSX.Element;
