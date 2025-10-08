@@ -18,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Pokémon App - Discover Your Favorite Pokémon",
-  description: "xplore detailed information about Pokémon, including stats, types, evolutions, and more. Your ultimate Pokémon reference app!",
+  description:
+    "xplore detailed information about Pokémon, including stats, types, evolutions, and more. Your ultimate Pokémon reference app!",
 };
 
 export default function RootLayout({
