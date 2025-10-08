@@ -124,7 +124,10 @@ export default function Table({ pokemon }: Readonly<{ pokemon: PokemonInfo }>) {
     <div className={container}>
       <div className={headerStyle}>
         <div>
-          <h1 className={title}>Details for {pokemon.name}</h1>
+          <h1 className={title}>
+            Details for{" "}
+            {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+          </h1>
           <p className={descriptionStyle}>
             Below are the statistics and abilities of {pokemon.name}.
           </p>
@@ -132,7 +135,7 @@ export default function Table({ pokemon }: Readonly<{ pokemon: PokemonInfo }>) {
       </div>
 
       <div className={tableWrapper}>
-        <table className={tableStyle}>
+        <table data-testid="table" className={tableStyle}>
           <thead className={thStyle}>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>

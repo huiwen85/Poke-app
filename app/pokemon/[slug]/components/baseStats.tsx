@@ -57,7 +57,7 @@ export default function BaseStats({
             <div
               className={css({
                 height: "full",
-                bg: "red.500",
+                bg: "blue.700",
                 rounded: "full",
                 transition: "width 0.3s ease",
               })}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Header, SearchBar } from "pokeapi-ui";
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 
 export default function headerContainer() {
   const router = useRouter();

@@ -1,6 +1,5 @@
 import { NarrowConstrainedWrapper } from "@/app/components/layout/narrow-constraint-wrapper";
 import PokemonsPagined from "../fragments/pokemonsPagined";
-import { Text } from "pokeapi-ui";
 import { css } from "@/styled-system/css";
 
 export default function PokemonsDesktopView({

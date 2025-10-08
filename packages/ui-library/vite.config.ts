@@ -18,12 +18,17 @@ export default defineConfig({
       fileName: "pokeapi-ui",
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      external: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+      ],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDom",
-          "react/jsx-runtime": "react/jsx-runtime",
+          "react/jsx-runtime": "ReactJsxRuntime",
         },
       },
     },

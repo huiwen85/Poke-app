@@ -6,7 +6,11 @@ export default function PokemonCard({
   pokemon,
 }: Readonly<{ pokemon: Pokemon }>) {
   return (
-    <Link key={pokemon.id} href={`/pokemon/${pokemon.name}/`}>
+    <Link
+      data-testid={`pokemon-card-${pokemon.id}`}
+      key={pokemon.id}
+      href={`/pokemon/${pokemon.name}/`}
+    >
       <li
         className={css({
           boxShadow: "md",
@@ -32,7 +36,7 @@ export default function PokemonCard({
             <h1 className={css({ fontSize: "xl" })}>
               {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
             </h1>
-            <p>{`#${pokemon.id}`}</p>
+            <p data-testid="pokemon-id">{`#${pokemon.id}`}</p>
           </div>
         </div>
       </li>

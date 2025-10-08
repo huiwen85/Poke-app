@@ -40,6 +40,7 @@ export default function PokemonInformation({ pokemon }: Readonly<Props>) {
           className={css({ display: "flex", flexDirection: "column", px: 4 })}
         >
           <h1
+            data-testid="pokemon-name"
             className={css({
               fontSize: "2xl",
               textAlign: "start",
@@ -48,7 +49,10 @@ export default function PokemonInformation({ pokemon }: Readonly<Props>) {
           >
             {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
           </h1>
-          <div className={css({ display: "flex", spaceX: 2 })}>
+          <div
+            data-testid="types"
+            className={css({ display: "flex", spaceX: 2 })}
+          >
             {pokemon.types.map((type, ind) => (
               <span
                 key={ind}

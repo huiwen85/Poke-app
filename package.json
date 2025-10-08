@@ -1,6 +1,6 @@
 {
   "name": "pokeapp",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
@@ -17,18 +17,24 @@
     "@tanstack/react-query-devtools": "^5.90.2",
     "@tanstack/react-table": "^8.21.3",
     "next": "15.5.4",
-    "pokeapi-ui": "^0.0.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "pokeapi-ui": "^0.1.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
     "@pandacss/dev": "^1.4.1",
     "@tanstack/react-devtools": "^0.7.2",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^20.19.19",
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "cypress": "^15.4.0",
     "rimraf": "^6.0.1",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   }
 }

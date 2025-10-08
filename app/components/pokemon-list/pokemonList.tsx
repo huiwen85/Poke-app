@@ -1,7 +1,6 @@
 import { Pokemon } from "@/app/types/pokemon";
 import { css } from "@/styled-system/css";
 import PokemonCard from "../card/pokemonCard";
-
 interface Props {
   pokemons: Pokemon[];
 }
@@ -21,6 +20,7 @@ export default function PokemonList({ pokemons }: Readonly<Props>) {
       </h1>
       <div className={css({ textAlign: "center", mt: "8" })}>
         <ul
+          data-testid="pokemon-list"
           className={css({
             display: "grid",
             gridTemplateColumns: "repeat(2,1fr)",
