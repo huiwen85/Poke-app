@@ -1,6 +1,6 @@
 {
   "name": "pokeapi-ui",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "files": [
     "dist"
@@ -24,7 +24,8 @@
     "storybook-docs": "storybook dev --docs",
     "build-storybook": "storybook build",
     "build-storybook-docs": "storybook build --docs",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "publish:lib": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
     "react": "^19.1.0",

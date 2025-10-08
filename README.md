@@ -4,18 +4,16 @@ Este proyecto usa Storybook para documentar los componentes UI.
 
 🌐 **Documentación de componentes (Storybook):** [Ver Storybook](https://huiwen85.github.io/Poke-app/)
 
-## Getting Started
+# Quickstart
 
-First, run the development server:
+npm install
 
 ```bash
+# On repository directory
+# install npm
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -23,3 +21,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 # Run cypress tests
 
 npx cypress open --project ./test/
+
+# Run storybook
+
+npm run --prefix packages/ui-library storybook
+
+### ⚡ Build and Publish the Library
+
+Run the following command from the root of the project:
+
+```bash
+npm run --prefix packages/ui-library publish:lib
+```
